@@ -20,14 +20,22 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 |
 */
 
+Route::resource('course', 'CourseController');
+
 Route::get('/dashboard', function () {
     //return view('welcome');
     if(Auth::check())
     {
-        return view('dashboard/home');
+        $name=Auth::user()->name;
+        return view('dashboard/home',array('name' => $name));
     }
     return redirect('/auth/login');
 });
+
+//Route::get('/about', function(){
+//
+//
+//});
 
 
 Route::get('/', function () {

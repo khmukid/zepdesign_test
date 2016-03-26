@@ -42,7 +42,9 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul id="active" class="nav navbar-nav side-nav">
-                <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                <li class="selected">
+                    {!! HTML::link('/course', 'Course', array('class'=>'fa fa-bullseye')) !!}
+                </li>
                 <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
                 <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
                 <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
@@ -76,7 +78,7 @@
                     {{--</ul>--}}
                 {{--</li>--}}
                 <li class="dropdown user-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {!! $name !!}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
                         <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>

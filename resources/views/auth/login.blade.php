@@ -83,6 +83,9 @@
                                 <input type="password" name="password" id="password" class="form-control" >
                                 <!--input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"-->
                             </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember"> Remember Me
+                            </div>
                             <button type="submit" class="btn">Sign in!</button>
                         </form>
                     </div>
