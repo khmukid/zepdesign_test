@@ -22,6 +22,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::resource('course', 'CourseController');
 
+Route::resource('department', 'DepartmentController');
+
 Route::get('/dashboard', function () {
     //return view('welcome');
     if(Auth::check())

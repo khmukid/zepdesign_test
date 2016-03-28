@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ZepDesign-Test - @yield('title')</title>
 
     {!! Html::style('content/bootstrap/css/bootstrap.css') !!}
@@ -48,7 +49,10 @@
                 <li>
                     {!! HTML::link('/course', ' Course Show', array('class'=>'fa fa-tasks')) !!}
                 </li>
-                <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
+                <li>
+                    {!! HTML::link('/department/create', ' Ajax Department create', array('class'=>'fa fa-globe')) !!}
+
+                </li>
                 <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
                 <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
                 <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>

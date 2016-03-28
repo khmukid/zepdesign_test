@@ -1,6 +1,7 @@
 
 jQuery(document).ready(function() {
-	
+
+
     /*
         Fullscreen background
     */
@@ -26,6 +27,62 @@ jQuery(document).ready(function() {
     	});
     	
     });
-    
+
+	$('#department_create').submit(function(event) {
+
+		console.log('I am here');
+
+		var formData = {
+			'_token'              : $('input[name=_token]').val(),
+			'dep_name'              : $('input[name=department_name]').val(),
+			'dep_code'             : $('input[name=department_code]').val(),
+			'dep_description'    : $('input[name=department_description]').val()
+		};
+
+		$.ajax({
+					type        : 'POST',
+					url         : '/department',
+					data        : formData,
+					dataType    : 'json',
+					encode      : true
+				})
+				.done(function(data) {
+					if(data['id']>0)
+					{
+						window.location='/department'
+					}
+				});
+
+		event.preventDefault();
+	});
+
+	$('#department_update').submit(function(event) {
+
+		console.log('I am here');
+
+		var formData = {
+			'_token'              : $('input[name=_token]').val(),
+			'dep_name'              : $('input[name=department_name]').val(),
+			'dep_code'             : $('input[name=department_code]').val(),
+			'dep_description'    : $('input[name=department_description]').val()
+		};
+
+		$.ajax({
+					type        : 'PUT',
+					url         : '/department/update',
+					data        : formData,
+					dataType    : 'json',
+					encode      : true,
+					headers		: {'_token': $('input[name=_token]').val()}
+				})
+				.done(function(data) {
+					if(data['id']>0)
+					{
+						window.location='/department'
+					}
+				});
+
+		event.preventDefault();
+	});
     
 });
